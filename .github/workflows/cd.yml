@@ -56,14 +56,14 @@ jobs:
 
     steps:
       - id: deploy-frontend
-        uses: azure/webapps-deploy@v3.0.2
+        uses: azure/webapps-deploy@v3.0.3
         with:
           app-name: ${{ vars.CLIENT_NAME }}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_FRONTEND }}
           images: 'fiteverywhere.azurecr.io/frontend:${{ github.ref_name }}'
 
-      - uses: azure/webapps-deploy@v3.0.2
+      - uses: azure/webapps-deploy@v3.0.3
         with:
           app-name: ${{ vars.API_NAME }}
           slot-name: 'Production'
